@@ -10,7 +10,7 @@ namespace DogWalk.DataAccess
     public interface IDogOwnerRepository
     {
         IEnumerable<DogOwner> GetAllDogOwners();
-        DogOwner AddNewDogOwner(AddDogOwnerDTO ownerToAdd);
+        bool AddNewDogOwner(AddDogOwnerDTO ownerToAdd);
         DogOwner GetDogOwnerById(int ownerId);
     }
 }
