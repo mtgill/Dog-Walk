@@ -14,36 +14,36 @@ namespace DogWalk.Controllers
     [ApiController]
     public class WalkController : ControllerBase
     {
+        private readonly IWalkRepository _repo;
+
+        public WalkController(IWalkRepository repo)
+        {
+            _repo = repo;
+
+        }
+
         // GET: api/Walk
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Walk> GetAllWalks()
         {
-            return new string[] { "value1", "value2" };
+            return _repo.GetAllWalks();
         }
 
         // GET: api/Walk/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("{walkId}")]
+        public Walk GetWalkById(int walkId)
         {
-            return "value";
+            return _repo.GetWalkById(walkId);
         }
+
 
         // POST: api/Walk
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IEnumerable<Walk> AddWalk(AddWalkDTO walkToAdd)
         {
+            _repo.AddNewWalk(walkToAdd);
+            return _repo.GetAllWalks();
         }
 
-        // PUT: api/Walk/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

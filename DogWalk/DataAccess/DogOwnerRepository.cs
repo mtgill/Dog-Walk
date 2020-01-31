@@ -41,16 +41,15 @@ namespace DogWalk.DataAccess
             }
         }
 
-        public DogOwner AddNewDogOwner(AddDogOwnerDTO ownerToAdd)
+        public bool AddNewDogOwner(AddDogOwnerDTO ownerToAdd)
         {
             using (var db = new SqlConnection(_connectionString))
             {
                 var sql = @"INSERT INTO[dbo].[DogOwner]
-                                                    ([Email]
-	                                        output inserted.*
+                                                    ([Email])
                                                 VALUES
                                                     (@email)";
-                return db.QueryFirst<DogOwner>(sql, ownerToAdd);
+                return db.Execute(sql, ownerToAdd) == 1;
             }
         }
 

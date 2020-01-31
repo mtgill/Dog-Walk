@@ -30,6 +30,7 @@ namespace DogWalk
             services.AddControllers();
 
             services.AddScoped<IDogOwnerRepository, DogOwnerRepository>();
+            services.AddScoped<IWalkRepository, WalkRepository>();
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
