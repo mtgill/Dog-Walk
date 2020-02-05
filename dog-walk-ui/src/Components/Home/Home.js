@@ -2,19 +2,19 @@ import React from 'react';
 import Walk from '../Walk/Walk';
 import DogOwner from '../DogOwner/DogOwner';
 
-import zipCodeData from '../../DataRequests/zipCodeDataRequest';
+import weatherData from '../../DataRequests/weatherDataRequest';
 
 const Home = () => {
 
-  const showLatLng = (zipCode) => {
-    zipCodeData.getLatLng(zipCode)
+  const getForecast = (zipCode) => {
+    weatherData.getForecast(zipCode)
     .then((resp) => {
-      const latLng = resp;
-      console.log('lat lng', latLng);
+      const weather = resp;
+      console.log('lat lng', weather);
       })
   }
 
-  showLatLng(37216);
+  getForecast(37216);
   return (
     <>
     <h2>Walks</h2>
