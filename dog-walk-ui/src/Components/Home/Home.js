@@ -1,50 +1,18 @@
-import React, {useState, useEffect } from 'react';
-import walkDataRequest from '../../DataRequests/walkDataRequest';
+import React from 'react';
+import Walk from '../Walk/Walk';
+import DogOwner from '../DogOwner/DogOwner';
 
-const ShowAllWalks = () => {
+const Home = () => {
 
-const [allWalks, setAllWalks] = useState([]);
+  return (
+    <>
+    <h2>Walks</h2>
+      <Walk />
+      <h2>Dog Owners</h2>
+      <DogOwner />
+    </>
+  )
 
-
-useEffect(() => {
-
-walkDataRequest.getAllWalks()
-  .then((resp) => {
-   const walks = resp;
-   setAllWalks(walks);
-   console.log('all walks', walks);
-  })
-
-
-
-}, []);
-
-const showAllWalks = () => {
-  allWalks.forEach((walk) => {
-    return <ul>
-    <li>{walk.userId}</li>
-        <li>{walk.dateOfWalk}</li>
-        <li>{walk.outcome}</li>
-        </ul>
-  })
 }
 
-return (
-  <>
-  <div className="allWalks">
-    {/* {showAllWalks} */}
-    {allWalks.map(walk => {
-     const {userId, dateOfWalk, outcome} = walk;
-      return <ul>
-      <li>{userId}</li>
-          <li>{dateOfWalk}</li>
-          <li>{outcome}</li>
-      </ul>
-    })}
-  </div>
-  </>
-)
-
-};
-
-export default ShowAllWalks;
+export default Home;
