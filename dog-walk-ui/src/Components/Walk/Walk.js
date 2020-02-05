@@ -17,7 +17,7 @@ const ShowAllWalks = () => {
 
   return (
     <>
-    <div className="allWalks">
+    <div className="Walk">
       {allWalks.map(walk => {
       const {userId, dateOfWalk, outcome} = walk;
         return <ul>
