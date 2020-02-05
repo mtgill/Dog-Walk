@@ -15,7 +15,7 @@ const ShowAllDogOwners = () => {
 
   return (
     <>
-    <div className="allWalks">
+    <div className="DogOwner">
       {allDogOwners.map(dog => {
       const {id, email} = dog;
         return <ul>
