@@ -16,13 +16,13 @@ const ShowAllDogOwners = () => {
   return (
     <>
     <div className="DogOwner">
-      {allDogOwners.map(dog => {
+      {/* {allDogOwners.map(dog => {
       const {id, email} = dog;
         return <ul>
         <li>{id}</li>
             <li>{email}</li>
         </ul>
-      })}
+      })} */}
     </div>
     </>
   )
