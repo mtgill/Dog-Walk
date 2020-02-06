@@ -18,14 +18,14 @@ const ShowAllWalks = () => {
   return (
     <>
     <div className="Walk">
-      {allWalks.map(walk => {
+      {/* {allWalks.map(walk => {
       const {userId, dateOfWalk, outcome} = walk;
         return <ul>
         <li>{userId}</li>
             <li>{dateOfWalk}</li>
             <li>{outcome}</li>
         </ul>
-      })}
+      })} */}
     </div>
     </>
   )
