@@ -8,24 +8,31 @@ import Weather from '../Weather/Weather';
 
 const Home = () => {
   const [userZipCode, setUserZipCode] = useState(0);
+  const [userWeather, setUserWeather] = useState([]);
 
   const getWeatherInfo = (weather) => {
-    return weather;
+    setUserWeather(weather);
+    console.log('zip', userZipCode);
+    console.log('weather', userWeather);
   }
 
-  const getZip = () => {
-    console.log('zip', userZipCode);
+  const getUserZip = () => {
+    return userZipCode;
   }
+
+  const test = (stuff) => {
+    console.log(stuff);
+  }
+
 
   return (
     <div className="Home">
 
         <Input onChange={event => setUserZipCode(event.target.value)}/>
-        <Button color="success" onClick={getZip}>success</Button>
-
-    <Weather getWeatherInfo={getWeatherInfo}/>
+        <Button color="success" onClick={test}>success</Button>
     <Walk />
     <DogOwner />
+    <Weather test={test} getWeatherInfo={getWeatherInfo} zip={userZipCode}/>
     </div>
   )
 
