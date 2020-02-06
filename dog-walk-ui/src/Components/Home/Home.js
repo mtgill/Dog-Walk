@@ -1,22 +1,16 @@
 import React from 'react';
 import Walk from '../Walk/Walk';
 import DogOwner from '../DogOwner/DogOwner';
+import Weather from '../Weather/Weather';
 
-import weatherData from '../../DataRequests/weatherDataRequest';
+
 
 const Home = () => {
 
-  const getForecast = (zipCode) => {
-    weatherData.getForecast(zipCode)
-    .then((resp) => {
-      const weather = resp;
-      console.log('lat lng', weather);
-      })
-  }
 
-  getForecast(37216);
   return (
     <>
+    <Weather />
     <h2>Walks</h2>
       <Walk />
       <h2>Dog Owners</h2>
