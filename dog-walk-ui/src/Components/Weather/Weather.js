@@ -8,23 +8,23 @@ const [weather, setWeather] = useState([]);
 const [decision, setDecision] = useState([]);
 const [zip, setZip] = useState(props.zip);
 
-// useEffect(() => {
-//   let mounted = true;
-//     async function getForecast(zipCode) {
-//       const data = await weatherData.getForecast(zipCode)
-//       .catch(err => {
-//         console.log(err);
-//       });
-//       if (data){
-//         setWeather(data);
-//         getWeatherInfo(data);
-//       }
-//   }
-//     getForecast(zip);
-// //   return () => { mounted = false; };
-// // }, []);
+useEffect(() => {
+  let mounted = true;
+    async function getForecast(zipCode) {
+      const data = await weatherData.getForecast(zipCode)
+      .catch(err => {
+        console.log(err);
+      });
+      if (data){
+        setWeather(data);
+        getWeatherInfo(data);
+      }
+  }
+    getForecast(zip);
+  return () => { mounted = false; };
+}, []);
 
-// getWeatherInfo(weather);  
+getWeatherInfo(weather);  
 
 
 
