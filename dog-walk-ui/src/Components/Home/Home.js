@@ -29,7 +29,7 @@ const Home = () => {
         });
         if (!emails.includes(currentEmail)){
           console.log('user does not exist')
-          if (!allOwners.includes(firebase.auth().currentUser.email)){
+          // if (!allOwners.includes(firebase.auth().currentUser.email)){
             console.log('user does not exist');
             const newOwner = {
               email: currentEmail
@@ -38,9 +38,8 @@ const Home = () => {
           } else {
             console.log('user does exist');
           }
-        }
-        console.log('test', emails);
-      // console.log('all owners', allOwners);
+        
+
         });
   }
 
