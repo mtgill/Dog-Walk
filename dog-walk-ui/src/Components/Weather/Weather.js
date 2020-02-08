@@ -6,6 +6,7 @@ const Weather = (props) => {
 const {getWeatherInfo} = props;
 const [weather, setWeather] = useState([]);
 const [decision, setDecision] = useState([]);
+const [zip, setZip] = useState(props.zip);
 
 useEffect(() => {
   let mounted = true;
@@ -14,18 +15,22 @@ useEffect(() => {
       .catch(err => {
         console.log(err);
       });
-      if (mounted && data){
+      if (data){
         setWeather(data);
+        getWeatherInfo(data);
       }
   }
-    getForecast(37216);
+    getForecast(zip);
   return () => { mounted = false; };
 }, []);
 
-  getWeatherInfo(weather);
+getWeatherInfo(weather);  
+
+
 
 return (
   <>
+    {console.log('zipcode', zip)}
   </>
 )
 
