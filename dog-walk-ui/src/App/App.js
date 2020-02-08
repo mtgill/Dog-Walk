@@ -17,6 +17,7 @@ import Auth from '../Components/Auth/Auth';
 import Home from '../Components/Home/Home';
 
 import walkData from '../DataRequests/walkDataRequest';
+import dogOwnerData from '../DataRequests/dogOwnerDataRequest';
 
 
 import './App.scss';
@@ -50,6 +51,14 @@ class App extends React.Component {
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({ authed: true });
+        // .then(() => {
+        //   dogOwnerData.getAllDogOwners()
+        //   .then((resp) => {
+        //   const allOwners = resp;
+            
+        //     });
+        // })
+       
       } else {
         this.setState({ authed: false });
       }
@@ -59,6 +68,8 @@ class App extends React.Component {
   componentWillUnmount() {
     this.removeListener();
   }
+
+
 
   render() {
     const { authed } = this.state;

@@ -12,13 +12,6 @@ class Auth extends React.Component {
     e.preventDefault();
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
-    .then(() => {
-      const newUser = firebase.auth().currentUser;
-      const newOwner = {
-        email: newUser.email
-      }
-      dogOwnerData.addDogOwner(newOwner);
-      });
   };
 
   render() {
