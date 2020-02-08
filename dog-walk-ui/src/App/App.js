@@ -16,6 +16,9 @@ import MyNavBar from '../Components/NavBar/NavBar';
 import Auth from '../Components/Auth/Auth';
 import Home from '../Components/Home/Home';
 
+import walkData from '../DataRequests/walkDataRequest';
+
+
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
