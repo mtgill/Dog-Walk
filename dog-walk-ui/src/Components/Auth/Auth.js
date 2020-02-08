@@ -1,5 +1,7 @@
 import React from 'react';
 
+import dogOwnerData from '../../DataRequests/dogOwnerDataRequest';
+
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
@@ -9,7 +11,7 @@ class Auth extends React.Component {
   loginClickEvent = (e) => {
     e.preventDefault();
     const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider);
+    firebase.auth().signInWithPopup(provider)
   };
 
   render() {

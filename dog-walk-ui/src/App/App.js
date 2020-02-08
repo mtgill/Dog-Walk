@@ -16,6 +16,10 @@ import MyNavBar from '../Components/NavBar/NavBar';
 import Auth from '../Components/Auth/Auth';
 import Home from '../Components/Home/Home';
 
+import walkData from '../DataRequests/walkDataRequest';
+import dogOwnerData from '../DataRequests/dogOwnerDataRequest';
+
+
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -56,6 +60,8 @@ class App extends React.Component {
   componentWillUnmount() {
     this.removeListener();
   }
+
+
 
   render() {
     const { authed } = this.state;

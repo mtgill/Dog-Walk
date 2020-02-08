@@ -15,4 +15,6 @@ const getAllDogOwners = () => new Promise((resolve, reject) => {
   .catch(err => reject(err));
 });
 
-export default { getAllDogOwners };
+const addDogOwner = newDogOwner => axios.post(`${baseUrl}`, newDogOwner);
+
+export default { getAllDogOwners, addDogOwner };

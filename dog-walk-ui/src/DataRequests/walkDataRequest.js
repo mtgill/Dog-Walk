@@ -15,4 +15,6 @@ const getAllWalks = () => new Promise((resolve, reject) => {
   .catch(err => reject(err));
 });
 
-export default { getAllWalks };
+const addWalk = newWalk => axios.post(`${baseUrl}`, newWalk);
+
+export default { getAllWalks, addWalk };
